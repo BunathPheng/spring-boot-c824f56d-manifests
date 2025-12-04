@@ -1,0 +1,25 @@
+---
+# Source: helm for kubernetes/templates/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: spring-boot-c824f56d
+  labels:
+    app: spring-boot-c824f56d
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: spring-boot-c824f56d
+  template:
+    metadata:
+      labels:
+        app: spring-boot-c824f56d
+    spec:
+      containers:
+        - name: spring-boot-c824f56d
+          image: docker.io/phengbunath/spring_boot-c824f56d:1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
